@@ -1,0 +1,36 @@
+.env
+.venv/
+__pycache__/
+outputs/
+server.log
+server-error.log
+
+.env.tmp
+
+# Local secrets (keep the public configuration template)
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Model weights, datasets, and generated results
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+samples/
+test_artifacts/
+/*verification.json
+
+# Runtime logs and local backups
+logs/
+*.log
+backups/
+
+# Personal editor settings and document-generation workspace
+.idea/
+.vscode/
+docs_work/
+组会汇报/
+
