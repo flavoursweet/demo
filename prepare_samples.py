@@ -1,4 +1,4 @@
-"""按原训练代码的 seed=42 / 30% 划分抽取前 8 个验证样本，不依据模型效果挑选。"""
+"""按原训练代码的 seed=42 / 30% 划分抽取前 16 个验证样本，不依据模型效果挑选。"""
 from pathlib import Path
 import json, shutil
 import numpy as np
@@ -10,7 +10,7 @@ files = sorted(p.name for p in (source / 'image').glob('*.png'))
 indices = np.arange(len(files))
 np.random.RandomState(42).shuffle(indices)
 items = []
-for i, index in enumerate(indices[:8]):
+for i, index in enumerate(indices[:16]):
     name = files[index]
     sid = f'sample-{i+1:02}'
     shutil.copy2(source / 'image' / name, root / 'samples' / f'{sid}.png')
